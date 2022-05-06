@@ -7,6 +7,7 @@ console.log(randomCar)
 console.log(otherRandomCar)
 //  tesla , Mercedes
 
+
 // 2
 const employee = {
     name: 'Elon',
