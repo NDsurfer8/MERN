@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 
 const User = () => {
 
-    // * SET STATE
+    // * SET INITIAL STATE
     const [firstName,setFirstName] = useState('')
     const [lastName,setlastName] = useState('')
     const [Email,setEmail] = useState('')
@@ -17,7 +17,7 @@ const User = () => {
     const [PasswordError,setPasswordError] = useState('')
     const [ConfirmPasswordError,setConfirmPasswordError] = useState('')
 
-    // * HANDLER FUNCTION FOR EVENT 
+    // * HANDLERS FUNCTION FOR EVENT 
     const firstNameHandler = (e) =>{
         setFirstName(e.target.value);
         if(firstName < 2){
@@ -60,17 +60,14 @@ const User = () => {
 
     const ConfirmPasswordHandler = (e) =>{
         setConfirmPassword(e.target.value);
-        if(ConfirmPassword.length < 8){
-            setConfirmPasswordError("Password must be atlest 8 Chars")
+        if(Password !== ConfirmPassword){
+            setConfirmPasswordError("Password must match")
         }
         else{
             setConfirmPasswordError('')
         }
     }
     // * END OF HANDLER FUNCTIONS FOR ALL FORM COMPONENTS
-
-
-
 
     // * FORM DATA TO BE DISPLAYED
 
