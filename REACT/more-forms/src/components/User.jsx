@@ -1,72 +1,81 @@
 
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 const User = () => {
 
     // * SET INITIAL STATE
-    const [firstName,setFirstName] = useState('')
-    const [lastName,setlastName] = useState('')
-    const [Email,setEmail] = useState('')
-    const [Password,setPassword] = useState('')
-    const [ConfirmPassword,setConfirmPassword] = useState('')
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setlastName] = useState('')
+    const [Email, setEmail] = useState('')
+    const [Password, setPassword] = useState('')
+    const [ConfirmPassword, setConfirmPassword] = useState('')
 
     // * SET VALIDATIONS
-    const [firstNameError,setFirstNameError] = useState('')
-    const [lastNameError,setlastNameError] = useState('')
-    const [EmailError,setEmailError] = useState('')
-    const [PasswordError,setPasswordError] = useState('')
-    const [ConfirmPasswordError,setConfirmPasswordError] = useState('')
+    const [firstNameError, setFirstNameError] = useState('')
+    const [lastNameError, setlastNameError] = useState('')
+    const [EmailError, setEmailError] = useState('')
+    const [PasswordError, setPasswordError] = useState('')
+    const [ConfirmPasswordError, setConfirmPasswordError] = useState('')
 
     // * HANDLERS FUNCTION FOR EVENT 
-    const firstNameHandler = (e) =>{
+    const firstNameHandler = (e) => {
         setFirstName(e.target.value);
-        if(firstName < 2){
+        if (firstName < 2) {
             setFirstNameError("First Name must be atlest 2 Chars")
         }
-        else{
+        else {
             setFirstNameError('')
         }
     }
 
-    const lastNameHandler = (e) =>{
+    const lastNameHandler = (e) => {
         setlastName(e.target.value);
-        if(lastName < 2){
+        if (lastName < 2) {
             setlastNameError("last Name must be atlest 2 Chars")
         }
-        else{
+        else {
             setlastNameError('')
         }
     }
 
-    const EmailHandler = (e) =>{
+    const EmailHandler = (e) => {
         setEmail(e.target.value);
-        if(Email.length < 5){
+        if (Email.length < 5) {
             setEmailError("Email must be atlest 5 Chars")
         }
-        else{
+        else {
             setEmailError('')
         }
     }
 
-    const PasswordHandler = (e) =>{
+    const ConfirmPasswordHandler = (e) => {
+        setConfirmPassword(e.target.value);
+        if (Password !== ConfirmPassword) {
+            setConfirmPasswordError("Password must match")
+        }
+        else {
+            setConfirmPasswordError('')
+        }
+    }
+
+    const PasswordHandler = (e) => {
         setPassword(e.target.value);
-        if(Password.length < 8){
+        if (Password.length < 8) {
             setPasswordError("Password must be atlest 8 Chars")
         }
-        else{
+        else {
             setPasswordError('')
         }
     }
 
-    const ConfirmPasswordHandler = (e) =>{
-        setConfirmPassword(e.target.value);
-        if(Password !== ConfirmPassword){
-            setConfirmPasswordError("Password must match")
-        }
-        else{
-            setConfirmPasswordError('')
-        }
-    }
+
+
+
+
+
+
+
+
     // * END OF HANDLER FUNCTIONS FOR ALL FORM COMPONENTS
 
     // * FORM DATA TO BE DISPLAYED
@@ -76,27 +85,27 @@ const User = () => {
             <form onSubmit={""}>
                 <div>
                     <label>First Name:</label>
-                    <input type="text" onChange={firstNameHandler}/>
+                    <input type="text" onChange={firstNameHandler} />
                     <p>{firstNameError}</p>
                 </div>
                 <div>
                     <label>Last Name:</label>
-                    <input type="text" onChange={lastNameHandler}/>
+                    <input type="text" onChange={lastNameHandler} />
                     <p>{lastNameError}</p>
                 </div>
                 <div>
                     <label>Email:</label>
-                    <input type="text" onChange={EmailHandler}/>
+                    <input type="text" onChange={EmailHandler} />
                     <p>{EmailError}</p>
                 </div>
                 <div>
                     <label>Password:</label>
-                    <input type="text" onChange={PasswordHandler}/>
+                    <input type="text" onChange={PasswordHandler} />
                     <p>{PasswordError}</p>
                 </div>
                 <div>
                     <label>Confirm Password:</label>
-                    <input type="text" onChange={ConfirmPasswordHandler}/>
+                    <input type="text" onChange={ConfirmPasswordHandler} />
                     <p>{ConfirmPasswordError}</p>
                 </div>
             </form>

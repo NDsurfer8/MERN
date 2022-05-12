@@ -1,12 +1,14 @@
 import React, {useState} from 'react'
 
 const Form = (props) => {
+//  DESTRUCTUREING PROPS
+    const {addColor} = props
 
     const [colors, setColor] = useState("")
 
     const submitHandler = (e) =>{
         e.preventDefault()
-        props.addColor(colors);
+        addColor(colors);
     }
 
     return (
