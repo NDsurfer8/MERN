@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 const NumOrWord = () => {
 
     const params = useParams()
-                        // testring route parameter to see if it is NAN
+                        // testring route parameter to see if it is NAN/ is this not a number?
     const isWord = isNaN(params.numorword)
 
     return (

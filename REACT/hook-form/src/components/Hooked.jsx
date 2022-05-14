@@ -4,20 +4,20 @@ const Hooked = () => {
     // we need to use state to store alerts etc..
     // whatever is passed into the useState("")is your initial state
     // *   Initial State  Initial State
-    const [firstName, setfirstName] = useState("")
-    const [lastName, setlastName] = useState("");
+    const [firstName, setFirstName] = useState("")
+    const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [confirmPassword, setconfirmPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
     // *    VALIDATIONS
     const [firstNameError, setFirstNameError] = useState("")
 
 
 //* handler sets state and displays all logic for validations etc...
     const firstNameHandler = (e) => {
-        setfirstName(e.target.value);
-        if(firstName < 2){
-            setFirstNameError("First Name must be atlest 2 Chars")
+        setFirstName(e.target.value);
+        if(firstName.length < 2){
+            setFirstNameError("must be at lest 2 Chars")
         }
         else{
             setFirstNameError('')
@@ -25,7 +25,7 @@ const Hooked = () => {
     }
 
     const lastNameHandler = (e) => {
-        setlastName(e.target.value)
+        setLastName(e.target.value)
     }
     const emailHandler = (e) => {
         setEmail(e.target.value)
@@ -34,7 +34,7 @@ const Hooked = () => {
         setPassword(e.target.value)
     }
     const confirmPasswordHandler = (e) => {
-        setconfirmPassword(e.target.value)
+        setConfirmPassword(e.target.value)
     }
 
 

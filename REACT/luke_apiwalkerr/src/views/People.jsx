@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 const People = () => {
     const [apiState, setApiState] = useState()
+    const [errMsg,setErrMsg] = useState()
+    const [errImg,setErrImg] = useState()
 
     const { id } = useParams()
 
@@ -14,7 +16,8 @@ const People = () => {
                 setApiState(successResponse.data)    //?  TAKING RESPONSE DOATA AND STORING IT IN STATE.
             })                          //successfull response.
             .catch(errorResponse => console.log("ERROR", errorResponse))
-
+            setErrMsg("these are not the droids your looking for...")
+            setErrImg('https://i.redd.it/6o6b1cu15n841.jpg')
 
     }, [id])
 
@@ -35,7 +38,11 @@ const People = () => {
             <p>Mass: {apiState.mass}</p>
             <p>EyeColor: {apiState.eye_color}</p>
             <p>BirthYear: {apiState.birth_year}</p>
-            </div> : null
+            </div> 
+            : <p>
+            <h1>{errMsg}</h1>
+            <img src={errImg} alt = "obi-wan"/></p>
+            
         }
     </div>
     )

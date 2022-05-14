@@ -8,6 +8,11 @@ const Display = (props) => {
         e.preventDefault()
         deleteTask(index)
 
+
+    const todoClasses = [];
+        if(todo.isComplete){
+            todoClasses.push('line-through');
+        }
         
     }
     return (
@@ -16,8 +21,8 @@ const Display = (props) => {
                 todos.map((todo, index) => {
                     return (
                         <div  key={index} >
-                            {/* data being displayed */}
-                            {todo.task}
+                            {/* data being displayed */}<span className='line-through'>{todo.task}</span>
+                            {/* <span { todo.isComplete ? style = { textDecoration : "line-through" } : null }>  </span> */}
                             <input onChange={(e) => completeTasks(index)} 
                                 type="checkbox" checked={todo.isComplete}/>
                                 {/* DELETEING TASK AT INDEX WHEN THE EVENT IS TRIGGERED BY ONCLICK */}

@@ -5,14 +5,14 @@ const User = () => {
 
     // * SET INITIAL STATE
     const [firstName, setFirstName] = useState('')
-    const [lastName, setlastName] = useState('')
+    const [lastName, setLastName] = useState('')
     const [Email, setEmail] = useState('')
     const [Password, setPassword] = useState('')
     const [ConfirmPassword, setConfirmPassword] = useState('')
 
     // * SET VALIDATIONS
     const [firstNameError, setFirstNameError] = useState('')
-    const [lastNameError, setlastNameError] = useState('')
+    const [lastNameError, setLastNameError] = useState('')
     const [EmailError, setEmailError] = useState('')
     const [PasswordError, setPasswordError] = useState('')
     const [ConfirmPasswordError, setConfirmPasswordError] = useState('')
@@ -21,7 +21,7 @@ const User = () => {
     const firstNameHandler = (e) => {
         setFirstName(e.target.value);
         if (firstName < 2) {
-            setFirstNameError("First Name must be atlest 2 Chars")
+            setFirstNameError("First Name must be at least 2 Chars")
         }
         else {
             setFirstNameError('')
@@ -29,19 +29,19 @@ const User = () => {
     }
 
     const lastNameHandler = (e) => {
-        setlastName(e.target.value);
+        setLastName(e.target.value);
         if (lastName < 2) {
-            setlastNameError("last Name must be atlest 2 Chars")
+            setLastNameError("last Name must be at least 2 Chars")
         }
         else {
-            setlastNameError('')
+            setLastNameError('')
         }
     }
 
     const EmailHandler = (e) => {
         setEmail(e.target.value);
         if (Email.length < 5) {
-            setEmailError("Email must be atlest 5 Chars")
+            setEmailError("Email must be at least 5 Chars")
         }
         else {
             setEmailError('')
@@ -50,7 +50,7 @@ const User = () => {
 
     const ConfirmPasswordHandler = (e) => {
         setConfirmPassword(e.target.value);
-        if (Password !== ConfirmPassword) {
+        if ([Password] !== [ConfirmPassword]) {
             setConfirmPasswordError("Password must match")
         }
         else {
@@ -58,10 +58,23 @@ const User = () => {
         }
     }
 
+    // if (typeof input["password"] !== "undefined" && typeof input["confirm_password"] !== "undefined") {
+
+
+    //     if (input["password"] != input["confirm_password"]) {
+    
+    //       isValid = false;
+    
+    //       errors["password"] = "Passwords don't match.";
+    
+    //     }
+    
+    // }
+
     const PasswordHandler = (e) => {
         setPassword(e.target.value);
         if (Password.length < 8) {
-            setPasswordError("Password must be atlest 8 Chars")
+            setPasswordError("Password must be at least 8 Chars")
         }
         else {
             setPasswordError('')

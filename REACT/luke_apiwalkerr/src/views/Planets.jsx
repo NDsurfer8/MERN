@@ -4,6 +4,8 @@ import axios from 'axios'
 
 const Planets = () => {
     const [apiState, setApiState] = useState()
+    const [errMsg,setErrMsg] = useState()
+    const [errImg,setErrImg] = useState()
 
     const { id } = useParams()
 
@@ -15,7 +17,8 @@ const Planets = () => {
                 setApiState(successResponse.data)    //?  TAKING RESPONSE DOATA AND STORING IT IN STATE.
             })                          //successfull response.
             .catch(errorResponse => console.log("ERROR", errorResponse))
-
+            setErrMsg("these are not the droids your looking for...")
+            setErrImg('https://i.redd.it/6o6b1cu15n841.jpg')
 
     }, [id])
     // allows for page to rerender everytime id changes in url .
@@ -40,7 +43,10 @@ const Planets = () => {
                 <p>Gravity: {apiState.gravity}</p>
                 <p>Population: {apiState.population}</p>
                 <p>terrain: {apiState.terrain}</p>
-                </div> : null
+                </div> 
+                : <p>
+                <h1>{errMsg}</h1>
+                <img src={errImg} alt = "obi-wan"/></p>
             }
         </div>
             
