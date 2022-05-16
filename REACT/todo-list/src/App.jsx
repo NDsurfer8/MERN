@@ -16,6 +16,7 @@ const App = () => {
   //* handler function addtask
   const addTask = (newTask) => {
     setTodos([...todos, newTask]);
+
   };
 
 

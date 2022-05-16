@@ -8,7 +8,7 @@ export default props => {
 
     const submitHandler = e =>{
         e.preventDefault()
-        axios.post('http://localhost:8000/api/people',{
+        axios.post('http://localhost:8000/api/person',{
             firstName,
             lastName
         })

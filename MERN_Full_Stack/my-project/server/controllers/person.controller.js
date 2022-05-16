@@ -7,10 +7,9 @@ module.exports.index = (req,res) => {
         message: "Hello World"
     })
 }
-
 // export function to create a new user ...axios call.
 module.exports.createPerson = (req, res) => {
-    const { firstName, lastName } = req.body
+    const { firstName, lastName } = req.body;
     Person.create({
         firstName,
         lastName
